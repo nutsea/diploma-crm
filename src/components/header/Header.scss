@@ -1,0 +1,267 @@
+.Header {
+    width: 80%;
+    max-width: 1360px;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    color: #020202;
+    border-bottom: solid 1px #f1f1f1;
+}
+
+.HeaderPC {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.HeaderMobile {
+    display: none;
+}
+
+.HeaderTop {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderLogo {
+    width: 200px;
+    cursor: pointer;
+}
+
+.HeaderNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 4px;
+
+    span {
+        cursor: pointer;
+        transition: color .1s linear;
+
+        @media (hover: hover) {
+            &:hover {
+                color: #02020280;
+            }
+        }
+
+        @media (pointer: coarse) {
+            &:active {
+                color: #02020280;
+            }
+        }
+    }
+
+    span+span {
+        margin-left: 24px;
+    }
+}
+
+.HeaderSearch {
+    height: 40px;
+    width: 440px;
+    border: solid 1.5px #0202021a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: border .1s linear;
+
+    &.Focused {
+        border: solid 1.5px #020202;
+    }
+
+    img {
+        margin: 0 13px;
+        height: 14px;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        width: calc(100% - 14px - 13px - 13px);
+        color: #020202;
+
+        &::placeholder {
+            color: #02020240;
+        }
+    }
+}
+
+.HeaderBtns {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+    }
+}
+
+.FavHeaderBox,
+.CartHeaderBox {
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    span {
+        position: absolute;
+        left: 12px;
+        top: -3px;
+        padding: 0 6px;
+        height: 16px;
+        background-image: linear-gradient(to bottom left, #65AEFE 0%, #A081ED 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 16px;
+        font-size: 10px;
+        font-weight: 700;
+    }
+}
+
+.CartHeaderBox {
+    margin-left: 18px;
+}
+
+.HeaderAuth {
+    padding: 0 13px;
+    height: 40px;
+    border: solid 1.5px #0202021a;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: border .1s linear;
+
+    span {
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 6px;
+    }
+
+    img {
+        height: 14px;
+        width: 14px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            border: solid 1.5px #020202;
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            border: solid 1.5px #020202;
+        }
+    }
+}
+
+.HProfileInitials {
+    background-color: #F5F5F5;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: #767676;
+    cursor: pointer;
+    user-select: none;
+
+    img {
+        width: 20px;
+    }
+}
+
+.HeaderBottom {
+    width: 100%;
+    height: 50px;
+}
+
+.HeaderNav2 {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    span {
+        font-size: 14px;
+        font-weight: 600;
+        color: #02020280;
+        padding: 0 36.4px;
+        cursor: pointer;
+        transition: color .1s linear;
+
+        @media (hover: hover) {
+            &:hover {
+                color: #020202;
+            }
+        }
+
+        @media (pointer: coarse) {
+            &:active {
+                color: #020202;
+            }
+        }
+    }
+}
+
+.BurgerBtn {
+    width: 96px;
+    cursor: pointer;
+}
+
+.HeaderElement {
+    width: 96px;
+}
+
+@media (max-width: 1480px) {
+    .HeaderPC {
+        display: none;
+    }
+
+    .HeaderMobile {
+        height: 56px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .HeaderLogo {
+        // width: 108px;
+        height: 16.56px;
+    }
+
+    .FavHeaderBox {
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 850px) {
+    .Header {
+        width: 88%;
+        padding: 0 6%;
+    }
+}
+
+@media (max-width: 360px) {
+    .HeaderLogo {
+        margin-right: calc(50% - 96px - 54px);
+    }
+}

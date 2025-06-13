@@ -1,0 +1,84 @@
+.OrderItemImagesSmall {
+    width: 90px;
+    margin-right: 10px;
+}
+
+.OrderSmallImg {
+    width: 100%;
+    height: 126px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.OrderSmallImgStyle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+    border-radius: 6px;
+}
+
+.OrderSmallImg+.OrderSmallImg {
+    margin-top: 10px;
+}
+
+.OrderBigImgSliderBox {
+    // max-height: calc(100vh - 48px - 48px);
+    height: 100%;
+    display: flex;
+    width: 400px;
+    position: relative;
+}
+
+.OrderBigImgSlider {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+
+    // .mySwiper,
+    // .swiper-wrapper {
+    //     width: auto;
+    //     height: auto;
+    //     max-width: 100% !important;
+    //     max-height: 100% !important;
+    //     display: flex !important;
+    //     align-items: center;
+    // }
+
+    // .swiper-slide {
+    //     width: 100% !important;
+    //     height: 100% !important;
+    // }
+}
+
+.OrderBigImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 6px;
+}
+
+@media (max-width: 690px) {
+    .OrderItemImagesSmall {
+        display: none;
+    }
+
+    .OrderSmallImg {
+        display: none;
+    }
+
+    .OrderBigImgSliderBox {
+        max-width: calc(100% - 20px - 10px);
+    }
+}

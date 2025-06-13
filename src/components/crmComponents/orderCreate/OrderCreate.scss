@@ -1,0 +1,98 @@
+@use '../../../base.scss';
+
+.CRMOrderCreate {
+    width: 100%;
+}
+
+.CRMOrderCreateSub {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.CRMCreateInput {
+    border: solid 1px #EAEAEA;
+}
+
+textarea.CRMOrderCardInput {
+    height: 60px;
+}
+
+.CRMOrderInputModal {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    top: calc(100% + 10px);
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: solid 1px #EAEAEA;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.OrderInputModalHide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.CRMOrderInputModalBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .Cancel {
+        width: calc(50% - 5px);
+        background-color: #808080;
+        color: white;
+        height: 40px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .Submit {
+        width: calc(50% - 5px);
+        background-color: #3b8e1a;
+        color: white;
+        height: 40px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .Inactive {
+        background-color: #808080;
+        pointer-events: none;
+    }
+}
+
+.AutocompleteBrand {
+    transition: opacity 0.2s ease;
+}
+
+.AutocompleteHide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.CRMOrderRequired {
+    font-size: 10px;
+    color: #121212;
+    margin-top: 10px;
+}

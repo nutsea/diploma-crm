@@ -1,0 +1,438 @@
+@use '../../../base.scss';
+
+.CRMParse {
+    width: calc(100% - 230px);
+    padding-left: 20px;
+    border-left: solid 1px #EAEAEA;
+    display: flex;
+    flex-direction: column;
+}
+
+.CRMParseRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.CRMParseCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.CRMParseCol+.CRMParseCol {
+    margin-left: 20px;
+}
+
+.BrandInputBox,
+.ModelInputBox,
+.SearchInputBox {
+    position: relative;
+
+    label {
+        position: absolute;
+        left: 10px;
+        top: -8px;
+        background-color: white;
+        color: #808080;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 0 3px;
+        border-radius: 10px;
+        transition: font-size 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+    }
+}
+
+.ModelInputBox {
+    margin-top: 10px;
+}
+
+.SearchInputBox+.SearchInputBox {
+    margin-top: 10px;
+}
+
+.ParseLink {
+    margin-bottom: 10px;
+}
+
+.AutocompleteBrand {
+    position: absolute;
+    color: #125097;
+    top: calc(100% + 10px);
+    width: 100%;
+    border: solid 1px #1a6fd0;
+    border-radius: 6px;
+    background-color: #eff7ff;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.AutocompleteItemBrand {
+    height: 40px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: #d2e7ff;
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            background-color: #F5F5F5;
+        }
+    }
+}
+
+.CRMParseSub {
+    font-size: 20px;
+    font-weight: 700;
+    color: #020202;
+    margin-bottom: 12px;
+}
+
+.CRMParseInput {
+    width: 350px;
+    outline: none;
+    padding: 0px 14px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    border: solid 1px #b3b3b3;
+    border-radius: 6px;
+    transition: border .1s linear;
+
+    &::placeholder {
+        color: #A6A6A6;
+    }
+
+    &:focus {
+        border: solid 1px #121212;
+    }
+}
+
+.CRMParseInput+.CRMParseInput {
+    margin-top: 10px;
+}
+
+.CRMParseBtn {
+    margin-top: 10px;
+    width: 380px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #808080;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .1s linear;
+    pointer-events: none;
+
+    &:hover {
+        background-color: #363636;
+    }
+}
+
+.CRMParseBtn.Active {
+    background-color: #121212;
+    pointer-events: auto;
+}
+
+.CRMParseTableBox {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.CRMParseTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: solid 1px #EAEAEA;
+    }
+
+    thead {
+        th {
+            font-size: 14px;
+            font-weight: 700 !important;
+            color: #121212;
+            padding: 0 14px 14px 14px;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        td {
+            padding: 8px 14px;
+        }
+    }
+}
+
+.ParsedTried {
+    background-color: #de4a9c5a;
+}
+
+.ParsedExist {
+    background-color: #36c9005a;
+}
+
+.ParsedNoSizes {
+    background-color: #eac50b5a;
+}
+
+// .ParsedInvalidSizes {
+//     background-color: #1762b8;
+// }
+
+.CRMParseUid {
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    // color: white;
+    padding: 2px 5px 2px 7px;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    background-color: #d2d2d2;
+    // background-color: #525252;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        // background-color: #d9d9d9;
+        background-color: #bebebe;
+    }
+}
+
+.CRMParseCopyIcon {
+    margin-left: 5px;
+}
+
+.CRMParseImgBox {
+    width: 60px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+}
+
+.CRMParseName {
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    max-width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.CRMDownloadBtn.Inactive {
+    background-color: #808080;
+    pointer-events: none;
+}
+
+.CRMParseBtns {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 380px;
+}
+
+.ParseSelect {
+    margin-top: 10px;
+    width: calc(100% - 28px);
+    padding: 0 14px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #d2e7ff;
+    border: solid 1px #1a6fd0;
+    color: #125097;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.Width350 {
+    width: 350px !important;
+}
+
+.ParseSelectList {
+    position: absolute;
+    width: calc(100% - 2px);
+    // top: 45px;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #fff;
+    background-color: #eff7ff;
+    border: solid 1px #1a6fd0;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0 0 10px 0px #0000000c;
+}
+
+.Width378 {
+    width: 378px !important;
+}
+
+.ParseSelectItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: #125097;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #d2e7ff;
+    }
+}
+
+.CRMDownloadBtn {
+    margin-top: 10px;
+    width: calc(100% - 28px);
+    height: 42px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 15px;
+    border-radius: 6px;
+    background-color: #1a6fd0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #1762b8;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+}
+
+.CRMParseNotFound {
+    width: 380px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #12121259;
+}
+
+.LoaderModal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #ffffffd9;
+}
+
+@media (max-width: 1430px) {
+    .CRMParse {
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .CRMParseSub {
+        font-size: 16px;
+    }
+
+    .CRMParseInput {
+        font-size: 12px;
+    }
+
+    .CRMParseBtn {
+        font-size: 12px;
+    }
+
+    .ParseSelect {
+        font-size: 12px;
+    }
+
+    .CRMDownloadBtn {
+        font-size: 12px;
+    }
+
+    .CRMParseTable {
+        thead {
+            th {
+                font-size: 12px;
+            }
+        }
+
+        tbody {
+            td {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .CRMParseUid {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 490px) {
+    .CRMParseInput {
+        width: calc(100% - 28px);
+    }
+
+    .CRMParseBtn {
+        width: 100%;
+    }
+
+    .CRMParseBtns {
+        width: 100%;
+    }
+
+    .ParseSelect {
+        width: calc(100% - 214px - 28px);
+    }
+
+    .CRMParseTableBox {
+        overflow-x: auto;
+    }
+}

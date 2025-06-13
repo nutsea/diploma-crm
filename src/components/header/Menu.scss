@@ -1,0 +1,283 @@
+// .MenuBox {
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: #161616BD;
+//     position: fixed;
+//     z-index: 10;
+//     transition: opacity .2s linear;
+// }
+
+.MenuBox {
+    width: 100vw;
+    height: fit-content;
+    min-height: calc(100svh + 2px);
+    max-height: calc(100svh + 2px);
+    background-color: #161616BD;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: opacity .2s linear;
+    overflow-y: scroll;
+    overscroll-behavior: none;
+}
+
+.MenuBoxHide {
+    opacity: 0;
+}
+
+// .MenuContainer {
+//     width: calc(20vw - 40px);
+//     min-width: 200px;
+//     height: calc(100svh - 52px);
+//     overflow-y: auto;
+//     padding: 26px 20px;
+//     background-color: white;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 1000;
+//     transition: transform .2s linear;
+
+//     &::-webkit-scrollbar {
+//         width: 0;
+//         display: none;
+//     }
+// }
+
+.MenuContainer {
+    width: calc(20vw - 40px);
+    min-width: 200px;
+    min-height: calc(100svh - 52px);
+    padding: 26px 20px;
+    background-color: white;
+    transition: transform .2s linear;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+}
+
+.MenuHide {
+    transform: translate(-100%, 0);
+}
+
+.MenuTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    span {
+        font-size: 18px;
+        font-weight: 700;
+        color: #020202;
+    }
+}
+
+.MenuClose {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+
+    img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.MenuCatalogue {
+    width: 100%;
+}
+
+.MenuCatalogue+.MenuCatalogue {
+    margin-top: 38px;
+}
+
+.MenuItem {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #020202;
+    cursor: pointer;
+
+    img {
+        height: 14px;
+        width: 14px;
+    }
+}
+
+.MenuItem2 {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #8A8A8A;
+    cursor: pointer;
+}
+
+.MenuLine {
+    width: 100%;
+    height: 1px;
+    background-color: #F1F1F1;
+    margin: 10px 0 18px 0;
+}
+
+.MenuAuth {
+    width: 100%;
+    height: 50px;
+    margin-top: 38px;
+    background-color: #121212;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity .1s linear, transform .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.995);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+
+    img {
+        margin: 1px 6px 0 0;
+        height: 14px;
+        width: 14px;
+    }
+}
+
+.MenuProfile {
+    width: 100%;
+
+    .MenuAuth {
+        margin-top: 0;
+    }
+}
+
+.MProfileData {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.MProfileInitials {
+    background-color: #F5F5F5;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: #767676;
+    user-select: none;
+
+    img {
+        width: 20px;
+    }
+}
+
+.MProfileNP {
+    margin-left: 12px;
+}
+
+.MProfileName {
+    font-size: 14px;
+    color: #020202;
+    font-weight: 700;
+}
+
+.MProfilePhone {
+    font-size: 12px;
+    color: #8A8A8A;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+@media (max-width: 1280px) {
+    .MenuTop {
+        margin-bottom: 26px;
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .MenuClose {
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .MenuItem, .MenuItem2 {
+        font-size: 12px;
+
+        img {
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    .MenuAuth {
+        height: 40px;
+        font-size: 12px;
+
+        img {
+            margin: 0.5px 6px 0 0;
+            height: 12px;
+            width: 12px;
+        }
+    }
+
+    .MenuProfile {
+        .MenuAuth {
+            margin-top: -4px;
+        }
+    }
+
+    .MProfileInitials {
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .MProfileName {
+        font-size: 12px;
+    }
+
+    .MProfilePhone {
+        font-size: 10px;
+    }
+}

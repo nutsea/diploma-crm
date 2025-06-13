@@ -1,0 +1,282 @@
+@use '../../../base.scss';
+
+.CRMItemCard {
+    width: 100%;
+}
+
+.CRMBack {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #d2e7ff;
+    color: #121212;
+    padding: 4px 8px 4px 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.CRMBackText {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+
+.CRMItemCardBrand {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.CRMItemCardName {
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.CRMItemCardModel {
+    font-size: 12px;
+    font-weight: 500;
+    color: #808080;
+}
+
+.CRMItemCardUid {
+    margin-top: 10px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    padding: 2px 5px;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+}
+
+.CRMItemCardDate {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #808080;
+}
+
+.CRMItemCardRow {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.CRMItemCardLeftCol {
+    width: 130px;
+}
+
+.CRMItemCardRightCol {
+    width: calc(100% - 130px - 40px);
+    margin-left: 20px;
+    padding-left: 20px;
+    min-height: 100%;
+    border-left: solid 1px #EAEAEA;
+}
+
+.CRMItemCardSub {
+    font-size: 18px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.CRMItemCardImages {
+    display: flex;
+    flex-direction: column;
+}
+
+.CRMImgDeleteCheckbox {
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+}
+
+.CRMItemCardImg {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 100px;
+        border-radius: 6px;
+        overflow: hidden;
+        border: solid 1px #EAEAEA;
+        cursor: pointer;
+    }
+}
+
+.CRMImgDeleteBtn {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background-color: #808080;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.CRMImgDeleteBtn.Active {
+    pointer-events: auto;
+    background-color: #121212;
+}
+
+.CRMItemCardDate+.CRMItemCardDate {
+    margin-top: 0;
+}
+
+.CRMItemCardSizesTable {
+    margin-top: 10px;
+    width: 100%;
+
+    tr {
+        border-bottom: solid 1px #EAEAEA;
+        background-color: #f9f9f9;
+        border-radius: 6px;
+    }
+
+    td {
+        width: calc(100% / 8);
+    }
+
+    thead {
+        td {
+            font-size: 14px;
+            font-weight: 700 !important;
+            color: #020202;
+            background-color: #e1e1e1;
+            padding: 8px 14px;
+            text-align: left;
+            border-radius: 6px;
+        }
+
+        .TdBlue {
+            background-color: #bfd2e8;
+        }
+
+        .TdOrange {
+            background-color: #e8d6c0;
+        }
+    }
+
+    tbody {
+        td {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 6px;
+        }
+
+        .TdBlue {
+            background-color: #d2e7ff;
+            transition: background-color 0.2s ease;
+        }
+
+        .TdOrange {
+            background-color: #ffebd2;
+            transition: background-color 0.2s ease;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #ececec;
+
+                .TdBlue {
+                    background-color: #c6d9f0;
+                }
+
+                .TdOrange {
+                    background-color: #efdcc5;
+                }
+            }
+        }
+    }
+}
+
+.CRMItemCardFootnote {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+}
+
+@media (max-width: 850px) {
+    .CRMItemCardBrand {
+        font-size: 12px;
+    }
+
+    .CRMItemCardName {
+        font-size: 16px;
+    }
+
+    .CRMItemCardUid {
+        font-size: 12px;
+    }
+
+    .CRMItemCardDate {
+        font-size: 12px;
+    }
+
+    .CRMItemCardRow {
+        flex-direction: column;
+    }
+
+    .CRMItemCardLeftCol {
+        width: 100%;
+    }
+
+    .CRMItemCardImg img {
+        width: calc(100% - 16px - 10px);
+    }
+
+    .CRMItemCardRightCol {
+        width: 100%;
+        padding-left: 0;
+        border-left: none;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .CRMItemCardSizesTable {
+        thead {
+            td {
+                font-size: 10px;
+                padding: 2px 4px;
+            }
+        }
+        tbody {
+            td {
+                font-size: 10px;
+                padding: 2px 5px;
+            }
+        }
+    }
+}

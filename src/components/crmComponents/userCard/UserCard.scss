@@ -1,0 +1,76 @@
+.GenerateKeyCard {
+    width: 100%;
+
+    .KeyCard {
+        max-width: calc(100% - 5px);
+        width: calc(100% - 5px);
+    }
+}
+
+.UserCardText {
+    display: flex;
+    align-items: center;
+}
+
+
+.CRMUsersTable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: solid 1px #EAEAEA;
+    }
+
+    thead {
+        th {
+            font-size: 12px;
+            font-weight: 700 !important;
+            color: #121212;
+            padding: 0 14px 14px 14px;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        td {
+            padding: 14px 14px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .CRMOrderRecipient {
+            font-size: 12px;
+        }
+
+        .CRMOrdersPhone {
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .CRMOrdersSlow {
+            font-weight: 600;
+            color: #d18f00;
+        }
+
+        .CRMOrdersFast {
+            font-weight: 600;
+            color: #1fbc00;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+}
+
+@media (max-width: 1288px) {
+    .CRMUsersTableBox {
+        overflow-x: auto;
+    }
+}

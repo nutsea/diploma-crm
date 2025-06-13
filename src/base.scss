@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    box-sizing: unset;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    background-color: unset;
+    border-radius: unset;
+    border: unset;
+    cursor: pointer;
+}
+
+a {
+    color: unset;
+}
+
+input {
+    border-radius: unset;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Убираем стрелочки в Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    background-size: contain;
+    font-family: 'Manrope', sans-serif;
+    background-color: white;
+}
+
+.LoaderBox {
+    width: 100%;
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1430px) {
+        height: calc(100vh - 56px);
+    }
+}
+
+.LoaderBox2 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --width: 30vw;
+    --height: calc(var(--width) * 179 / 983);
+
+    @media (max-width: 675px) {
+        --width: 200px;
+        --height: calc(var(--width) * 179 / 983);
+    }
+}
+
+.LoaderBox3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .LoadLogo {
+        position: absolute;
+        width: var(--width);
+        height: var(--height);
+
+        @media (max-width: 675px) {
+            animation: toRight linear 3.4s infinite alternate, bounce linear 8.5s infinite alternate;
+        }
+
+        @media (min-width: 675px) {
+            animation: toRight linear 6.8s infinite alternate, bounce linear 17s infinite alternate;
+        }
+    }
+}
+
+.LoaderBox4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: calc(100% - var(--height));
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: calc(100% - var(--width));
+    }
+}
+
+.Loader {
+    display: block;
+    position: relative;
+    height: 32px;
+    width: 140px;
+    border: 3px solid #020202;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.Loader:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #7A43E5;
+    animation: ballbns 2s ease-in-out infinite alternate;
+}
+
+@keyframes ballbns {
+    0% {
+        left: 0;
+        transform: translateX(0%);
+    }
+
+    100% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+
+.Lock {
+    position: fixed;
+}
+
+.None {
+    display: none !important;
+}
+
+.MB0 {
+    margin-bottom: 0 !important;
+}
+
+.MT10 {
+    margin-top: 10px !important;
+}
+
+.MT15 {
+    margin-top: 15px !important;
+}
+
+.MB16 {
+    margin-bottom: 16px !important;
+}
+
+.MB20 {
+    margin-bottom: 20px !important;
+}
+
+.MT26 {
+    margin-top: 26px !important;
+}
+
+.MB42 {
+    margin-bottom: 42px !important;
+}
+
+.BreadCrumbs {
+    margin-top: 32px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.LastCrumb,
+.SlashCrumb {
+    color: #1212128A;
+}
+
+.LastCrumb {
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 0.5px;
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            text-decoration: underline;
+            text-decoration-thickness: 0.5px;
+        }
+    }
+}
+
+.SlashCrumb {
+    margin: 0 11px;
+}
+
+.NewCrumb {
+    color: #121212;
+}
+
+.MBInfo {
+    margin-bottom: 56px !important;
+}
+
+@mixin btn {
+    transition: opacity .1s linear, transform .1s linear, background-color .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    .BreadCrumbs {
+        font-size: 12px;
+        margin-top: 16px;
+    }
+
+    .SlashCrumb {
+        margin: 0 8px;
+    }
+
+    .MBInfo {
+        margin-bottom: 30px !important;
+    }
+
+    .MB42 {
+        margin-bottom: 16px !important;
+    }
+}

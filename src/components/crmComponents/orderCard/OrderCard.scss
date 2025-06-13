@@ -1,0 +1,967 @@
+@use '../../../base.scss';
+
+.CRMOrderCard {
+    width: 100%;
+}
+
+.CRMOrderCardRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.CRMOrderCardCol {
+    width: calc(50% - 50px);
+}
+
+.CRMOrderCardNum {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #121212;
+    width: 100%;
+    text-align: center;
+}
+
+.CRMOrderInputBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .AutocompleteBrand {
+        width: calc(100% - 115px);
+        left: 115px;
+    }
+}
+
+.CRMOrderCardTip {
+    min-width: 105px;
+    width: 105px;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    height: 30px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.CRMOrderCardNotChecked {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #db3232;
+}
+
+.OrderSelect+.CRMOrderCardInput {
+    margin-top: 5px;
+}
+
+.CursorBorderInput {
+    &:hover {
+        border: solid 1px #EAEAEA;
+    }
+}
+
+.CRMOrderCardInput {
+    display: block;
+    border: solid 1px #00000000;
+    outline: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    width: calc(100% - 4px);
+    height: 30px;
+    border-radius: 6px;
+    transition: border .1s linear;
+    resize: none;
+
+    &::placeholder {
+        color: #02020240;
+    }
+
+    &:focus {
+        border: solid 1px #020202;
+    }
+}
+
+.CRMOrderCardInputUid {
+    display: block;
+    border: solid 1px #EAEAEA;
+    outline: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    width: 400px;
+    padding: 0 14px;
+    height: 40px;
+    border-radius: 6px;
+    transition: border .1s linear;
+    resize: none;
+
+    &::placeholder {
+        color: #02020240;
+    }
+
+    &:focus {
+        border: solid 1px #020202;
+    }
+}
+
+.CRMOrderCardInputUid {
+    margin-top: 20px;
+}
+
+.CRMOrderCardInputUid+.CRMOrderCardInputUid {
+    margin-top: 10px;
+}
+
+.CRMOrderCardInfo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.CRMOrderCardLink {
+    color: #125097;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.OrderCardLineBeforeSub {
+    margin-top: 30px;
+    width: 100%;
+    height: 1px;
+    background-color: #EAEAEA;
+}
+
+.CRMOrderCardSub {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.CRMOrderCardItem {
+    margin-top: 10px;
+    width: 430px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: solid 1px #EAEAEA;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    img {
+        width: 100px;
+        height: auto;
+        border: solid 1px #EAEAEA;
+        border-radius: 6px;
+    }
+}
+
+.CRMOrderCardItemInfo {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.CRMOrderCardItemUid {
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    padding: 2px 5px;
+    border-radius: 6px;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+}
+
+.CRMOrderCardItemName {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #121212;
+}
+
+.CRMOrderCardItemSize {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.CRMOrderCardInfo2 {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.CRMFlexSizes {
+    width: 328px;
+    margin-left: -5px;
+}
+
+.CRMOrderCardItemSizeBtn {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    background-color: #e6e6e6;
+    width: 60px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+}
+
+.CRMChosenSize {
+    background-color: #1a6fd0 !important;
+    color: #fff;
+}
+
+.CRMOrderCardItemSize {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.CRMOrderCardItemTip {
+    font-size: 12px;
+    color: #12121280;
+    font-weight: 500;
+}
+
+.CRMOrderCardItemPrice {
+    margin-top: 5px;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    padding: 2px 5px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.CRMOrderCardItemPrice.Blue {
+    background-color: #d2e7ff;
+}
+
+.CRMOrderCardItemPrice.Orange {
+    background-color: #ffebd2;
+}
+
+.CRMOrderItemInput {
+    border: solid 1px #EAEAEA;
+    outline: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    width: 100px;
+    height: 30px;
+    padding: 0 14px;
+    margin-top: 5px;
+    border-radius: 6px;
+    transition: border .1s linear;
+
+    &::placeholder {
+        color: #02020240;
+    }
+
+    &:focus {
+        border: solid 1px #020202;
+    }
+}
+
+.CRMOrderItemInputNumber {
+    width: 150px;
+}
+
+.CRMOrderItemInputTrack {
+    width: 125px;
+}
+
+.CRMOrderCardLine {
+    margin-top: 10px;
+    width: 400px;
+    height: 1px;
+    background-color: #EAEAEA;
+}
+
+.CRMOrderCardItemTip2 {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #12121280;
+    font-weight: 500;
+}
+
+.CRMOrderCardSlow {
+    font-weight: 600;
+    color: #d18f00;
+}
+
+.CRMOrderCardFast {
+    font-weight: 600;
+    color: #1fbc00;
+}
+
+.CRMOrderInputCol {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.OrderSelect {
+    width: calc(100% - 28px);
+    padding: 0 14px;
+    height: 28px;
+    border-radius: 6px;
+    background-color: #d2e7ff;
+    border: solid 1px #1a6fd0;
+    color: #125097;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.OrderSelectList {
+    position: absolute;
+    width: calc(100% - 2px);
+    top: 45px;
+    left: 0;
+    background-color: #fff;
+    background-color: #eff7ff;
+    border: solid 1px #1a6fd0;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.OrderSelectItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: #125097;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #d2e7ff;
+    }
+}
+
+.CRMOrderCardPayment {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .CRMOrderCardPaymentCheck {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .CRMOrderCardInput {
+        margin: 0 0 0 10px;
+    }
+
+    input {
+        width: 374px;
+    }
+}
+
+.OrderItemSelect {
+    margin-top: 5px;
+    width: 120px;
+    padding: 0 14px;
+    min-height: 28px;
+    border-radius: 6px;
+    background-color: #d2e7ff;
+    border: solid 1px #1a6fd0;
+    color: #125097;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.OrderItemSelectList {
+    position: absolute;
+    width: calc(100% - 2px);
+    top: 45px;
+    left: 0;
+    background-color: #fff;
+    background-color: #eff7ff;
+    border: solid 1px #1a6fd0;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.OrderItemSelectListSmall {
+    position: absolute;
+    width: calc(100% - 2px);
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    background-color: #eff7ff;
+    border: solid 1px #1a6fd0;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.OrderItemSelectItem {
+    font-size: 14px;
+    font-weight: 500;
+    color: #125097;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #d2e7ff;
+    }
+}
+
+.CRMOrderCardPhotoRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+}
+
+.CRMOrderCardPhotoInput {
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border: solid 1px #1a6fd0;
+    background-color: #d2e7ff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+
+    span {
+        position: absolute;
+        margin-left: 14px;
+        font-weight: 500;
+        color: #125097;
+    }
+
+    img {
+        position: absolute;
+        width: 18px;
+        top: calc(50% - 9px);
+        right: 14px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+.CRMOrderCardTipPhoto {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #12121280;
+    font-weight: 500;
+}
+
+.CRMOrderCardOldPhotoRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -5px;
+
+    img {
+        width: 80px;
+    }
+}
+
+.CRMOrderCardOldPhotoRowOne {
+    position: relative;
+    margin-left: 5px;
+    height: 126px;
+    width: 90px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .CRMOrderImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+}
+
+.PhotoRemoveBtn {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background-color: #121212;
+    max-width: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.CRMOrderCardAddItems {
+    margin-top: 10px;
+    width: 430px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #808080;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    pointer-events: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.CRMOrderCardAddItems.Active {
+    pointer-events: auto;
+    background-color: #1a6fd0;
+}
+
+.CRMOrderItemNotFound {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #12121280;
+}
+
+.CRMOrderCardSaveBtn {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom left, #65AEFE 0%, #A081ED 100%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.Inactive {
+        background: unset;
+        background-color: #808080 !important;
+        pointer-events: none;
+    }
+}
+
+.NoBorderOrderItem {
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.CRMOrdersNotAllow {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+
+    input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+}
+
+.CRMOrderCardItemsTable {
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr {
+            border-bottom: solid 1px #EAEAEA;
+        }
+
+        thead {
+            td {
+                font-size: 14px;
+                font-weight: 700 !important;
+                color: #121212;
+                padding: 0 14px 14px 14px;
+                text-align: left;
+            }
+        }
+
+        tbody {
+            td {
+                padding: 8px 14px;
+                font-size: 14px;
+            }
+
+            tr {
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: #f9f9f9;
+                }
+            }
+        }
+    }
+}
+
+.OrderCardTableId {
+    font-size: 12px;
+    color: #12121280;
+}
+
+
+.POSliderModal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    background-color: rgba(#161616, 0.74);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.POSliderBox {
+    padding: 24px;
+    max-height: calc(100% - 48px - 48px);
+    height: 600px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.POSliderImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.POSliderClose {
+    width: 20px;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.CRMOrderItemsList {
+    display: none;
+}
+
+.OrderUid {
+    margin-top: 5px;
+}
+
+@media (max-width: 1160px) {
+    .CRMOrderCardItemsTable {
+        display: none;
+    }
+
+    .CRMOrderItemsList {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CRMOrderCardTip2 {
+        font-weight: 700;
+        margin-top: 10px;
+    }
+
+    .CRMOrderMobileLine {
+        width: 100%;
+        height: 1px;
+        background-color: #ebebeb;
+    }
+
+    .CRMOrderCardName {
+        font-weight: 500;
+        font-size: 14px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    .CRMOrderItemsListOne+.CRMOrderItemsListOne {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .CRMOrderCard {
+        width: 100%;
+    }
+
+    .OrderSelect {
+        width: calc(100% - 28px);
+        font-size: 12px;
+    }
+
+    .OrderSelectItem {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardInput {
+        width: calc(100% - 28px);
+        font-size: 12px;
+    }
+
+    .CRMOrderCardPhotoRow {
+        width: 100%;
+    }
+
+    .CRMOrderCardPhotoInput {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .CRMOrderCardInfo {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardAddItems {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .CRMOrderCardItem {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .CRMOrderCardItemInfo {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .OrderItemSelect {
+        font-size: 12px;
+    }
+
+    .OrderItemSelectItem {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardItemSize {
+        font-size: 12px;
+    }
+
+    .CRMOrderItemInput {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardFast,
+    .CRMOrderCardSlow {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardItemSize {
+        width: 100%;
+    }
+
+    .CRMOrderCardItemSizeBtn {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardSaveBtn {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .CRMOrderCardItemPrice {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardInfo2 {
+        font-size: 12px;
+    }
+
+    .CRMOrderMobileBox {
+        background-color: #F8F8F8;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+    .CRMOrderCardNum {
+        text-align: start;
+        font-size: 16px;
+    }
+
+    .CRMOrdersNotAllow {
+        font-size: 10px;
+    }
+
+    .OrderCardLineBeforeSub {
+        margin-top: 15px;
+    }
+
+    .CRMOrderCardSub {
+        margin-top: 15px;
+        font-size: 16px;
+        text-align: start;
+    }
+    
+    .CRMOrderCardRow {
+        flex-direction: column;
+    }
+
+    .CRMOrderInputBox {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .CRMOrderCardTip {
+        width: unset;
+        min-width: unset;
+        font-weight: 500;
+        font-size: 10px;
+    }
+
+    .CRMOrderCardTip2 {
+        font-weight: 500;
+        font-size: 10px;
+    }
+
+    .CRMOrderCardInfo {
+        height: fit-content;
+        font-weight: 700;
+    }
+
+    .CRMOrderCardInfo2 {
+        font-size: 12px;
+    }
+
+    .CRMOrderCardCol {
+        width: 100%;
+    }
+
+    .CRMOrderCardInput {
+        background-color: inherit;
+        font-weight: 700;
+        width: 100%;
+        padding: 0;
+    }
+
+    .CursorBorderInput {
+        border: solid 1px #ebebeb;
+    }
+
+    .CRMOrderItemInput {
+        width: calc(100% - 28px);
+    }
+
+    .OrderItemSelect {
+        width: calc(100% - 28px);
+    }
+
+    .CRMOrderCardInputUid {
+        width: calc(100% - 28px);
+    }
+
+    .CRMItemCheck {
+        margin: 0;
+    }
+}
+
+@media (max-width: 690px) {
+    .POSliderBox {
+        padding: 10px;
+        max-width: calc(100% - 20px - 48px);
+    }
+
+    .POSliderClose {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .POSliderBox {
+        height: 100vw;
+    }
+}

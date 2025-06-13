@@ -1,0 +1,458 @@
+@use '../../../base.scss';
+
+.CRMItems {
+    width: calc(100% - 230px);
+    padding-left: 20px;
+    border-left: solid 1px #EAEAEA;
+}
+
+.CRMSearchInput {
+    width: calc(100% - 28px);
+    outline: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    border: solid 1px #EAEAEA;
+    border-radius: 6px;
+
+    &::placeholder {
+        color: #A6A6A6;
+    }
+}
+
+.CRMSearchItems {
+    margin-bottom: 20px;
+    height: 50px;
+    width: 100%;
+    border: solid 1px #EAEAEA;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: border .1s linear;
+
+    &.Focused {
+        border: solid 1px #020202;
+    }
+
+    img {
+        margin: 0 18px;
+        height: 14px;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        width: calc(100% - 14px - 18px - 18px);
+        color: #020202;
+
+        &::placeholder {
+            color: #02020240;
+        }
+    }
+}
+
+.CRMItemsChecked {
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    margin-bottom: 5px;
+}
+
+.CRMItemsBtns {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.CRMItemsUpdateBtn,
+.CRMItemsUpdateBtn2,
+.CRMItemsDeleteBtn {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    span {
+        margin-left: 10px;
+    }
+}
+
+.CRMItemsUpdateBtn,
+.CRMItemsUpdateBtn2 {
+    background-color: #363434;
+
+    &:hover {
+        background-color: #1f1f1f;
+    }
+}
+
+.CRMItemsDeleteBtn {
+    margin-left: 10px;
+    background-color: #db3232;
+
+    &:hover {
+        background-color: #b82d2d;
+    }
+}
+
+.CRMItemsUpdateBtn2 {
+    margin-left: 10px;
+}
+
+.CRMItemsUpdateBtn.Inactive,
+.CRMItemsDeleteBtn.Inactive,
+.CRMItemsUpdateBtn2.Inactive {
+    background-color: #808080;
+    pointer-events: none;
+}
+
+.CRMItemsTableBox {
+    width: 100%;
+}
+
+.CRMItemsTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: solid 1px #EAEAEA;
+    }
+
+    thead {
+        th {
+            font-size: 14px;
+            font-weight: 700 !important;
+            color: #121212;
+            padding: 0 14px 14px 14px;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        td {
+            padding: 8px 14px;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+
+    &.NonHoverable {
+        tr {
+            cursor: default;
+            transition: none;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.CRMTableTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.CRMItemCheck {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.CRMItemTr {
+    position: relative;
+}
+
+.Thumbnail {
+    position: fixed;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    transition: opacity 0.1s ease;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}
+
+.Thumbnail.Active {
+    opacity: 1;
+}
+
+.ThumbName {
+    font-size: 14px;
+    font-weight: 600;
+    color: #121212;
+    margin-top: 5px;
+}
+
+.ThumbUid {
+    margin-top: 50;
+    font-size: 12px;
+    font-weight: 500;
+    color: #808080;
+}
+
+.ThumbPrice {
+    margin-top: 10px;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    padding: 2px 5px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ThumbPrice+.ThumbPrice {
+    margin-top: 5px;
+}
+
+.ThumbPrice.Blue {
+    background-color: #d2e7ff;
+}
+
+.ThumbPrice.Orange {
+    background-color: #ffebd2;
+}
+
+.ThumbFav {
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    margin-top: 10px;
+}
+
+.ThumbFav+.ThumbFav {
+    margin-top: 0;
+}
+
+.ThumbFav.Blue {
+    color: #1a6fd0;
+    font-weight: 600;
+}
+
+.ThumbDate {
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+    margin-top: 10px;
+}
+
+.ThumbDate+.ThumbDate {
+    margin-top: 0;
+}
+
+.ThumbLine {
+    width: 100%;
+    height: 1px;
+    background-color: #EAEAEA;
+    margin-top: 10px;
+}
+
+.ThumbFootnote {
+    font-size: 10px;
+    font-weight: 400;
+    color: #808080;
+    margin-top: 5px;
+}
+
+.CRMPag {
+    width: 100%;
+}
+
+.InvisiblePagination {
+    display: none !important;
+}
+
+
+.CRMDeleteModalBox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .CRMDeleteModal {
+        width: 300px;
+        background-color: white;
+        border-radius: 6px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .CRMDeleteModalTitle {
+            font-size: 16px;
+            font-weight: 600;
+            color: #121212;
+            margin-bottom: 20px;
+        }
+
+        .CRMDeleteModalBtns {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .CRMDeleteModalBtn {
+            width: calc(50% - 10px);
+            height: 40px;
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .DeleteModalBtnCancel {
+            background-color: #363434;
+
+            &:hover {
+                background-color: #1f1f1f;
+            }
+        }
+
+        .DeleteModalBtnDelete {
+            background-color: #db3232;
+
+            &:hover {
+                background-color: #b82d2d;
+            }
+        }
+
+        .DeleteModalBtnUpdate {
+            background-color: #1a6fd0;
+
+            &:hover {
+                background-color: #1762b8;
+            }
+
+            &.Inactive {
+                background-color: #808080;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.BrandInputBoxItems,
+.ModelInputBoxItems {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.BrandInputBoxItems {
+    margin-top: -10px;
+}
+
+.CRMItemsInput {
+    width: calc(100% - 28px);
+    outline: none;
+    padding: 0px 14px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    border: solid 1px #b3b3b3;
+    border-radius: 6px;
+    transition: border .1s linear;
+
+    &::placeholder {
+        color: #A6A6A6;
+    }
+
+    &:focus {
+        border: solid 1px #121212;
+    }
+}
+
+.TimeElapsedInput {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1430px) {
+    .CRMItems {
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .CRMItemsTableBox {
+        overflow-x: auto;
+    }
+
+    .CRMSearchItems {
+        input {
+            font-size: 12px;
+        }
+    }
+
+    .CRMItemsUpdateBtn,
+    .CRMItemsDeleteBtn {
+        font-size: 12px;
+    }
+
+    .CRMItemsTable {
+        thead {
+            th {
+                font-size: 12px;
+            }
+        }
+
+        tbody {
+            td {
+                font-size: 12px;
+            }
+        }
+    }
+}

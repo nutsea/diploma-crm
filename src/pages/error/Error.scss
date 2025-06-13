@@ -1,0 +1,262 @@
+@use '../../base.scss';
+
+.ErrorBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.StarImg {
+    opacity: 0.4;
+    position: absolute;
+    z-index: -1;
+}
+
+.Star1,
+.Star2,
+.Star4,
+.Star5,
+.Star6,
+.Star13 {
+    width: 13px;
+}
+
+.Star3,
+.Star7,
+.Star8,
+.Star9,
+.Star10,
+.Star11,
+.Star12,
+.Star15,
+.Star16 {
+    width: 8px;
+}
+
+.Star14 {
+    width: 23px;
+}
+
+.Star1 {
+    right: 5%;
+    top: 8%;
+}
+
+.Star2 {
+    right: 20%;
+    top: 45%;
+}
+
+.Star3 {
+    right: 30%;
+    top: 58%;
+}
+
+.Star4 {
+    right: 12%;
+    top: 68%;
+}
+
+.Star5 {
+    right: 36%;
+    top: 80%;
+}
+
+.Star6 {
+    right: 45%;
+    top: 58%;
+}
+
+.Star7 {
+    right: 45%;
+    top: 82%;
+}
+
+.Star8 {
+    left: 30%;
+    top: 58%;
+}
+
+.Star9 {
+    left: 27%;
+    top: 67%;
+}
+
+.Star10 {
+    left: 17%;
+    top: 70%;
+}
+
+.Star11 {
+    left: 5%;
+    top: 73%;
+}
+
+.Star12 {
+    left: 6%;
+    top: 66%;
+}
+
+.Star13 {
+    left: 4%;
+    top: 55%;
+}
+
+.Star14 {
+    left: 5%;
+    top: 44%;
+}
+
+.Star15 {
+    left: 4%;
+    top: 32%;
+}
+
+.Star16 {
+    left: 22%;
+    top: 16%;
+}
+
+.ErrorContainer {
+    width: 80%;
+    max-width: 1360px;
+    padding: 150px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ErrorText {
+    max-width: 814px;
+    width: 100%;
+}
+
+.ErrorSub {
+    margin-top: 48px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #020202;
+}
+
+.ErrorPar {
+    margin: 24px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #02020280;
+    max-width: 620px;
+    text-align: center;
+}
+
+.ErrorSM {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        cursor: pointer;
+        height: 54px;
+        transition: opacity .1s linear, transform .1s linear;
+
+        @media (hover: hover) {
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    img+img {
+        margin-left: 12px;
+    }
+}
+
+.BackToMain {
+    margin-top: 48px;
+    width: 326px;
+    height: 60px;
+    background-color: #121212;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    @include base.btn();
+}
+
+@media (max-width: 1480px) {
+    .ErrorContainer {
+        padding: 120px 10%;
+    }
+
+    .ErrorText {
+        max-width: 600px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .ErrorContainer {
+        width: 88%;
+        padding: 100px 6%;
+    }
+}
+
+@media (max-width: 560px) {
+    .ErrorSub {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .ErrorPar {
+        margin: 18px 0;
+        font-size: 14px;
+        max-width: 240px;
+    }
+
+    .ErrorSM {
+        img {
+            height: 36px;
+        }
+    }
+
+    .BackToMain {
+        margin-top: 24px;
+        height: 40px;
+        width: 320px;
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .Star1,
+    .Star2,
+    .Star4,
+    .Star5,
+    .Star6,
+    .Star13 {
+        width: 8px;
+    }
+
+    .Star3,
+    .Star7,
+    .Star8,
+    .Star9,
+    .Star10,
+    .Star11,
+    .Star12,
+    .Star15,
+    .Star16 {
+        width: 5px;
+    }
+
+    .Star14 {
+        width: 16px;
+    }
+}

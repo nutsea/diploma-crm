@@ -1,0 +1,206 @@
+
+.ProfileInfo {
+    width: 673px;
+    max-width: 100%;
+    padding-left: 20px;
+    border-left: solid 1px #EAEAEA;
+}
+
+.ProfileInitials {
+    background-color: #F5F5F5;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #767676;
+    // cursor: pointer;
+    user-select: none;
+
+    img {
+        width: 40px;
+    }
+}
+
+.ProfileTip {
+    margin-top: 18px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #121212CC;
+
+    b {
+        font-weight: 800;
+    }
+}
+
+.ProfileInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 42px;
+}
+
+.InputsRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.InputsRow+.InputsRow {
+    margin-top: 42px;
+}
+
+.ProfileInputBox {
+    width: calc(50% - 14px);
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 16px;
+        font-weight: 700;
+        color: #020202;
+        margin-bottom: 12px;
+    }
+
+    .InputRelative {
+        position: relative;
+    }
+
+    input, .InputInfo {
+        width: calc(100% - 28px);
+        outline: none;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Manrope', sans-serif;
+        border: solid 1px #EAEAEA;
+        border-radius: 6px;
+    }
+
+    .InputClose {
+        position: absolute;
+        right: 14px;
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        cursor: pointer;
+    }
+
+    .Error {
+        border: solid 1px #c60000;
+    }
+
+    span {
+        font-size: 10px;
+        font-weight: 500;
+        color: #B6B6B6;
+        margin-top: 12px;
+    }
+
+    span+span {
+        margin-top: 0;
+    }
+}
+
+.ProfileSaveBtn {
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 19px 56px;
+    background-color: #121212;
+    color: white;
+    border-radius: 8px;
+    margin-top: 42px;
+    cursor: pointer;
+    transition: opacity .1s linear, transform .1s linear;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            transform: scale(0.995);
+        }
+    }
+
+    @media (pointer: coarse) {
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+@media (max-width: 1430px) {
+    .ProfileInfo {
+        padding-left: 0;
+        border-left: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .ProfileInfo {
+        width: 100%;
+    }
+
+    .ProfileInitials {
+        margin-top: 26px;
+        width: 74px;
+        height: 74px;
+        font-size: 22px;
+
+        img {
+            width: 30px;
+        }
+    }
+
+    .ProfileTip {
+        margin-top: 14px;
+        font-size: 12px;
+    }
+
+    .ProfileInputs {
+        margin-top: 4px;
+    }
+
+    .InputsRow {
+        flex-direction: column;
+        margin-top: 0 !important;
+    }
+
+    .ProfileInputBox {
+        width: 100%;
+        margin-top: 22px;
+
+        label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        input, .InputInfo {
+            padding: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        span {
+            margin-top: 8px;
+        }
+    }
+
+    .ProfileSaveBtn {
+        margin-top: 26px;
+        width: 100%;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

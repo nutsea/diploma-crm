@@ -1,0 +1,78 @@
+.Pagination {
+    margin-left: 2.15%;
+    margin-top: 66px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PagArrprevious, .PagArrnext {
+    padding: 0;
+
+    img {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.PagArrprevious {
+    margin-right: 11px;
+}
+
+.PagArrnext {
+    margin-left: 11px;
+
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+.PagNum {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0 3px;
+    background-color: #FAFBFC;
+    color: #292D32;
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color .3s ease, color .3s ease, font-weight .3s ease;
+}
+
+.PagNumSelected {
+    background-color: #121212;
+    color: white;
+    font-weight: 700;
+}
+
+.PagDots {
+    width: 48px;
+    height: 44px;
+    padding: 0;
+    margin: 0 3px 4px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #292D32;
+}
+
+@media (max-width: 1025px) {
+    .Pagination {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .Pagination {
+        margin-left: 2.87%;
+    }
+}
+
+@media (max-width: 720px) {
+    .Pagination {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,638 @@
+@use '../../../base.scss';
+
+.CRMOrders {
+    width: calc(100% - 230px);
+    padding-left: 20px;
+    border-left: solid 1px #EAEAEA;
+    display: flex;
+    flex-direction: column;
+}
+
+.CRMOrdersTabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.OrderTableItemShip.Fast {
+    background-color: #A8F701;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 6px;
+    padding: 3px 10px 3px 5px;
+    width: fit-content;
+
+    img {
+        margin-right: 5px;
+    }
+}
+
+.OrderItemTableSplitPaid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #A8F701;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 15px;
+}
+
+.CRMOrdersTab {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #EAEAEA;
+    }
+}
+
+.CRMOrdersTab.Active {
+    background-color: #383838;
+    color: white;
+}
+
+.CRMOrdersTabLine {
+    margin: 0 10px;
+    height: 100%;
+    width: 1px;
+    background-color: #EAEAEA;
+}
+
+.CRMSearchOrders {
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+    border: solid 1px #EAEAEA;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: border .1s linear;
+
+    &.Focused {
+        border: solid 1px #020202;
+    }
+
+    img {
+        margin: 0 18px;
+        height: 14px;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        width: calc(100% - 14px - 18px - 18px);
+        color: #020202;
+
+        &::placeholder {
+            color: #02020240;
+        }
+    }
+}
+
+.OrderTiles {
+    display: none;
+}
+
+.CRMOrdersTable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: solid 1px #EAEAEA;
+    }
+
+    thead {
+        th {
+            font-size: 12px;
+            font-weight: 700 !important;
+            color: #121212;
+            padding: 0 14px 14px 14px;
+            text-align: left;
+        }
+    }
+
+    tbody {
+        td {
+            padding: 14px 14px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .CRMOrderRecipient {
+            font-size: 12px;
+        }
+
+        .CRMOrdersPhone {
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .CRMOrdersSlow {
+            font-weight: 600;
+            color: #d18f00;
+        }
+
+        .CRMOrdersFast {
+            font-weight: 600;
+            color: #1fbc00;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+}
+
+.CRMOrdersChecked {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #121212;
+    margin-bottom: 5px;
+}
+
+.CRMOrdersBtns {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.CRMOrdersTakeBtn,
+.CRMOrdersDeleteBtn {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    span {
+        margin-left: 10px;
+    }
+}
+
+.CRMOrdersTakeBtn {
+    background-color: #363434;
+    margin-right: 10px;
+
+    &:hover {
+        background-color: #1f1f1f;
+    }
+}
+
+.CRMOrdersDeleteBtn {
+    background-color: #db3232;
+
+    &:hover {
+        background-color: #b82d2d;
+    }
+}
+
+.CRMOrdersTakeBtn.Inactive,
+.CRMOrdersDeleteBtn.Inactive {
+    background-color: #808080;
+    pointer-events: none;
+}
+
+.CRMOrderTr {
+    position: relative;
+}
+
+.CRMOrderTr.Canceled {
+    background-color: #ca535340;
+
+    &:hover {
+        background-color: #c7000040;
+    }
+}
+
+.OrderThumbnail {
+    position: fixed;
+    opacity: 0;
+    background-color: white;
+    border: 1px solid #EAEAEA;
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 300px;
+    font-size: 13px;
+    transition: opacity 0.1s ease;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}
+
+
+.OrderThumbnail.Active {
+    opacity: 1;
+}
+
+.ThumbTip {
+    color: #12121280;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.OrderThumbLine {
+    width: 100%;
+    height: 1px;
+    background-color: #EAEAEA;
+    margin-top: 10px;
+}
+
+.ThumbNumber {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.ThumbTg {
+    margin-top: 5px;
+}
+
+.ThumbClient {
+    margin-top: 5px;
+}
+
+.ThumbRecipient {
+    margin-top: 5px;
+}
+
+.ThumbPhone {
+    margin-top: 5px;
+}
+
+.ThumbShip {
+    margin-top: 5px;
+}
+
+.ThumbPayment {
+    margin-top: 5px;
+}
+
+.CRMOrdersEmpty {
+    font-size: 14px;
+    font-weight: 500;
+    color: #808080;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.CRMOrderStatusInput {
+    margin-top: -5px;
+    margin-bottom: 20px;
+    border: solid 1px #EAEAEA;
+    outline: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #121212;
+    width: calc(100% - 28px);
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 6px;
+    transition: border .1s linear;
+
+    &::placeholder {
+        color: #02020240;
+    }
+
+    &:focus {
+        border: solid 1px #020202;
+    }
+}
+
+.CRMOrdersShowStatusesBtn {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 14px;
+    height: 40px;
+    background-color: #1a6fd0;
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    user-select: none;
+}
+
+.CRMOrdersShowStatuses {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.CRMOrdersShowStatusesBox {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 250px;
+    background-color: white;
+    border: solid 1px #EAEAEA;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 10px;
+    // display: none;
+}
+
+.CRMOrdersShowStatusItem {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+        margin: 0;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+}
+
+.CRMOrdersShowStatusItem+.CRMOrdersShowStatusItem {
+    margin-top: 10px;
+}
+
+.CRMConfirmStatusesBtn {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    background-color: #1a6fd0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    user-select: none;
+}
+
+.OTStatusBox {
+    min-width: 100px;
+}
+
+.OTStatus {
+    color: white;
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: flex;
+    width: fit-content;
+}
+
+.OTStatus0 {
+    background-color: #121212;
+}
+
+.OTStatus1 {
+    background-color: #D8D8D8;
+    color: #121212;
+}
+
+.OTStatus2 {
+    background-color: #161EDE;
+}
+
+.OTStatus3 {
+    background-color: #161EDE;
+}
+
+.OTStatus4 {
+    background-color: #F1751C;
+}
+
+.OTStatus5 {
+    background-color: #343434;
+}
+
+.OTStatus6 {
+    background-color: #F1751C;
+}
+
+.OTStatus7 {
+    background-color: #004736;
+}
+
+.OTStatus8 {
+    background-color: #37CAEA;
+}
+
+.OTStatus9 {
+    background-color: #04DC5B;
+}
+
+.OTStatus10 {
+    background-color: #EAB8AD;
+}
+
+.OTStatus11 {
+    background-color: #ED350D;
+}
+
+@media (max-width: 1430px) {
+    .CRMOrders {
+        padding-left: 0;
+        border-left: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1288px) {
+    .CRMOrdersTableBox {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .CRMOrdersTab {
+        font-size: 12px;
+    }
+
+    .CRMOrdersTakeBtn,
+    .CRMOrdersDeleteBtn {
+        font-size: 12px;
+    }
+
+    .CRMOrdersTable {
+        display: none;
+
+        thead {
+            th {
+                font-size: 12px;
+            }
+        }
+
+        tbody {
+            td {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .OrderTiles {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .OrderTile {
+        width: 100%;
+        border: solid 1px #ebebeb;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+    }
+
+    .OrderTile+.OrderTile {
+        margin-top: 10px;
+    }
+
+    .OTRow {
+        border-bottom: solid 1px #ebebeb;
+        display: flex;
+    }
+
+    .OTRow:last-child {
+        border-bottom: none;
+    }
+
+    .OTLeftCol {
+        border-right: solid 1px #ebebeb;
+        width: 92px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding-left: 11px;
+    }
+
+    .OTRightCol {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    // .OTStatus {
+    //     color: white;
+    //     padding: 7px 10px;
+    //     border-radius: 4px;
+    //     font-weight: 700;
+    // }
+
+    // .OTStatus0 {
+    //     background-color: #121212;
+    // }
+
+    // .OTStatus1 {
+    //     background-color: #D8D8D8;
+    //     color: #121212;
+    // }
+
+    // .OTStatus2 {
+    //     background-color: #161EDE;
+    // }
+
+    // .OTStatus3 {
+    //     background-color: #161EDE;
+    // }
+
+    // .OTStatus4 {
+    //     background-color: #F1751C;
+    // }
+
+    // .OTStatus5 {
+    //     background-color: #343434;
+    // }
+
+    // .OTStatus6 {
+    //     background-color: #F1751C;
+    // }
+
+    // .OTStatus7 {
+    //     background-color: #004736;
+    // }
+
+    // .OTStatus8 {
+    //     background-color: #37CAEA;
+    // }
+
+    // .OTStatus9 {
+    //     background-color: #04DC5B;
+    // }
+
+    // .OTStatus10 {
+    //     background-color: #EAB8AD;
+    // }
+
+    // .OTStatus11 {
+    //     background-color: #ED350D;
+    // }
+
+    .CRMOrdersShowStatusesBtn {
+        font-size: 12px;
+    }
+
+    .CRMOrdersShowStatusItem {
+        font-size: 12px;
+    }
+
+    .CRMConfirmStatusesBtn {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 460px) {
+    .CRMOrdersTabs {
+        flex-wrap: wrap;
+        height: fit-content;
+        margin-left: -5px;
+        margin-top: -5px;
+    }
+
+    .CRMOrdersTab {
+        height: fit-content;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .CRMOrdersTabLine {
+        display: none;
+    }
+}
