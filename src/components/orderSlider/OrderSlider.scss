@@ -27,7 +27,6 @@
 }
 
 .OrderBigImgSliderBox {
-    // max-height: calc(100vh - 48px - 48px);
     height: 100%;
     display: flex;
     width: 400px;
@@ -43,21 +42,6 @@
     position: relative;
     border-radius: 6px;
     overflow: hidden;
-
-    // .mySwiper,
-    // .swiper-wrapper {
-    //     width: auto;
-    //     height: auto;
-    //     max-width: 100% !important;
-    //     max-height: 100% !important;
-    //     display: flex !important;
-    //     align-items: center;
-    // }
-
-    // .swiper-slide {
-    //     width: 100% !important;
-    //     height: 100% !important;
-    // }
 }
 
 .OrderBigImg {

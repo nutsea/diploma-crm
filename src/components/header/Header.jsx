@@ -76,9 +76,7 @@ export const Header = observer(({ authcode }) => {
 
     const handleAuth = async () => {
         await createAuth().then(data => {
-            // const telegramUrl = `https://t.me/nutsea_web_bot?start=${data.code}`
-            // const telegramUrl = `https://t.me/wp_auth_bot?start=${data.code}`
-            const telegramUrl = `https://t.me/kicksie_bot?start=${data.code}`
+            const telegramUrl = `https://t.me/nutsea_web_bot?start=${data.code}`
 
             setTimeout(() => {
                 let newWindow = window.open(telegramUrl, '_blank')
@@ -104,7 +102,6 @@ export const Header = observer(({ authcode }) => {
         try {
             await checkUser().then(data => {
                 setUser(data.user)
-                // user_store.setUser(data.user)
             })
             setIsAuth(true)
         } catch (e) {

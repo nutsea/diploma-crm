@@ -4,14 +4,6 @@ import { observer } from "mobx-react-lite";
 import { TbCopy, TbCopyCheckFilled } from "react-icons/tb";
 import FormatPrice from "../../../../utils/FormatPrice";
 
-// 7 - Старший ребенок;
-// 6 - Средний ребенок;
-// 5 - Малыш;
-// 4 - Ребенок;
-// 3 - Женский;
-// 2 - Мужской;
-// 1 - Унисекс;
-
 const genders = {
     1: 'Унисекс',
     2: 'Мужской',

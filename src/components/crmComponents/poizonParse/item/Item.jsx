@@ -14,12 +14,8 @@ export const Item = observer(({ item }) => {
     }
 
     function filterString(str) {
-        // const regex = /[^a-zA-Zа-яА-Я0-9 \-]/g
         const regex = /[^a-zA-Zа-яА-Я0-9 -]/g
         let newStr = str.replace(regex, '')
-        if (str.includes('【定制球鞋】')) {
-            newStr = '[Custom] ' + newStr
-        }
         return newStr
     }
 
@@ -68,7 +64,6 @@ export const Item = observer(({ item }) => {
             }
             {item.deletion_type &&
                 <td className="CRMParseName">{filterDeletionType(item.deletion_type)}</td>
-                // <td className="CRMParseName">{item.deletion_type}</td>
             }
         </>
     )

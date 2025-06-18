@@ -13,7 +13,6 @@ export const Error = () => {
         navigate(e.target.id)
         window.scrollTo({
             top: 0,
-            // behavior: 'smooth'
         })
     }
     return (

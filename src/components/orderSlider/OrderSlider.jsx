@@ -24,8 +24,6 @@ export const OrderSlider = ({ item, num }) => {
         const interval = setInterval(() => {
             setImages()
             const hasChildNodes = Array.from(document.querySelectorAll('.swiper-pagination-bullet')).every(pagination => pagination.hasChildNodes())
-            // const images = Array.from(document.querySelectorAll('.OrderSmallImgStyle'))
-            // if (hasChildNodes.length === images.length) {
             if (hasChildNodes) {
                 clearInterval(interval)
                 swiperRef.current.slideTo(num)

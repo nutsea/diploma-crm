@@ -9,7 +9,6 @@ import { fetchUser } from "../../../http/userAPI";
 import { fetchOneItemBySpu } from "../../../http/itemAPI";
 import close from '../../../assets/close4.svg'
 import close2 from '../../../assets/close.svg'
-// import { OrderSlider } from "../../orderSlider/OrderSlider";
 
 const itemStatusArray = {
     1: 'Ожидает выкуп',
@@ -39,7 +38,6 @@ export const OrderCard = ({ order, onBack, onSave, onUser }) => {
     const [listOpen, setListOpen] = useState(false)
     const [statusListsOpen, setStatusListsOpen] = useState([])
     const [orderStatusListOpen, setOrderStatusListOpen] = useState(false)
-    // const [socialMediaListOpen, setSocialMediaListOpen] = useState(false)
     const [itemsStatuses, setItemsStatuses] = useState([])
     const [status, setStatus] = useState(0)
     const [recipient, setRecipient] = useState('')
@@ -73,8 +71,6 @@ export const OrderCard = ({ order, onBack, onSave, onUser }) => {
     const [checkedPrice, setCheckedPrice] = useState(false)
     const [priceCNY, setPriceCNY] = useState(0)
     const [priceRUB, setPriceRUB] = useState(0)
-    // const [itemsFee, setItemsFee] = useState(0)
-    // const [itemsDeliveryCost, setItemsDeliveryCost] = useState(0)
     const [fee, setFee] = useState(0)
     const [cost, setCost] = useState(0)
     const [socialMediaType, setSocialMediaType] = useState('VK')
@@ -83,9 +79,6 @@ export const OrderCard = ({ order, onBack, onSave, onUser }) => {
     const [modalReport, setModalReport] = useState('')
     const [openedItem, setOpenedItem] = useState(-1)
     const [copied, setCopied] = useState(false)
-    // const [modalReportType, setModalReportType] = useState('')
-    // const [modalReportNum, setModalReportNum] = useState(0)
-
     const handleCopy = async (item) => {
         await navigator.clipboard.writeText(item.item_uid)
         setCopied(true)
@@ -108,8 +101,6 @@ export const OrderCard = ({ order, onBack, onSave, onUser }) => {
             setItemsStatuses(data.map(item => item.status))
             setPriceCNY(data.map(item => item.cny_cost))
             setPriceRUB(data.map(item => item.rub_cost))
-            // setItemsFee(data.map(item => item.fee))
-            // setItemsDeliveryCost(data.map(item => item.delivery_cost))
         })
         await fetchOrderPhotos(order.id).then(data => {
             setPhotos(data)

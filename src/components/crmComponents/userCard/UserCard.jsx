@@ -70,17 +70,6 @@ export const UserCard = ({ user, onBack, onOrder, onKey, onUpdate }) => {
         }
     }
 
-    // const handleChangeNumberInput = (e) => {
-    //     e.target.value = e.target.value.replace(/[^\d]/g, '')
-    //     switch (e.target.name) {
-    //         case 'phone':
-    //             setPhone(e.target.value)
-    //             break
-    //         default:
-    //             break
-    //     }
-    // }
-
     const findOrders = async () => {
         try {
             await fetchUserOrders(user.id).then(data => {
@@ -274,7 +263,6 @@ export const UserCard = ({ user, onBack, onOrder, onKey, onUpdate }) => {
                                                         onMouseEnter={(e) => handleMouseEnter(e, order.id)}
                                                         onMouseMove={(e) => handleMouseMove(e, order.id)}
                                                         onMouseLeave={handleMouseLeave}
-                                                        // onClick={(e) => handleChooseOrder(e, order)}
                                                         onClick={() => onOrder(order)}
                                                     >
                                                         <OrderItem order={order} isHovered={isHovered} position={position} isUser />

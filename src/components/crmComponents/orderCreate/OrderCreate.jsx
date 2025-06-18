@@ -75,18 +75,9 @@ export const OrderCreate = ({ onCreate }) => {
     const [search, setSearch] = useState('')
 
     const [createClient, setCreateClient] = useState(false)
-    // const createClient = useRef(false)
     const [focusClient, setFocusClient] = useState(false)
 
     const [openedItem, setOpenedItem] = useState(-1)
-
-    // const handleClientPhone = (e) => {
-    //     let value = e.target.value.replace(/\D/g, '')
-    //     if (value.length > 11) {
-    //         value = value.slice(0, 11)
-    //     }
-    //     setClientPhone(value)
-    // }
 
     const handleRecipientPhone = (e) => {
         let value = e.target.value.replace(/\D/g, '')
@@ -124,7 +115,6 @@ export const OrderCreate = ({ onCreate }) => {
                 setSearch(user.client)
                 setUser(user)
                 findAllUsers()
-                // setName('')
                 setClient(name)
                 setName('')
                 setSocialMedia('')
@@ -164,7 +154,6 @@ export const OrderCreate = ({ onCreate }) => {
         }])
         const delivery_cost = deliveryCost ? Number(deliveryCost) + Number(uidDelivery) : Number(uidDelivery)
         const fee_cost = fee ? Number(fee) + Number(uidFee) : Number(uidFee)
-        // const cost_cost = cost ? Number(cost) + Number(sizeAdd.price / 100 * course) + Number(fee_cost) + Number(delivery_cost) : Number(sizeAdd.price / 100 * course) + Number(fee_cost) + Number(delivery_cost)
         const cost_cost = cost ? Number(cost) + Number(sizeAdd.price / 100 * course) + Number(uidFee) + Number(uidDelivery) : Number(sizeAdd.price / 100 * course) + Number(uidFee) + Number(uidDelivery)
         const discount_cost = discountCost ? Number(discountCost) + Number(sizeAdd.price / 100 * course) + Number(uidFee) + Number(uidDelivery) : Number(sizeAdd.price / 100 * course) + Number(uidFee) + Number(uidDelivery)
         setDeliveryCost(delivery_cost)
@@ -200,12 +189,6 @@ export const OrderCreate = ({ onCreate }) => {
     useEffect(() => {
         findAllUsers()
     }, [])
-
-    // useEffect(() => {
-    //     window.addEventListener('click', (e) => {
-    //         if (!e.target.closest('.AddClient') && document.querySelector('.CRMCreateInput')?.hasFocus()) setFocusClient(false)
-    //     })
-    // }, [])
 
     return (
         <div className="CRMOrderCreate">

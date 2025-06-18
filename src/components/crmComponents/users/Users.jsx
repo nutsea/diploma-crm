@@ -215,7 +215,6 @@ export const Users = ({ userId, onOrder }) => {
                                 <tbody>
                                     {users.map((user, i) => {
                                         return (
-                                            // <tr key={i} onClick={() => setChosenUser(user)}>
                                             <tr key={i} onClick={(e) => handleChooseUser(e, user)}>
                                                 <td className="noClick">
                                                     <input

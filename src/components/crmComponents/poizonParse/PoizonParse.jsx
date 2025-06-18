@@ -76,7 +76,7 @@ export const PoizonParse = observer(({ onDownload }) => {
     const { deleted_items } = useContext(Context)
     const [keyword, setKeyword] = useState('')
     const [limit, setLimit] = useState('')
-    const [page, setPage] = useState('') // -1
+    const [page, setPage] = useState('')
     const [parsed, setParsed] = useState([])
     const [checked, setChecked] = useState([])
     const [loading, setLoading] = useState(false)

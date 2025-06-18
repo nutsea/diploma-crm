@@ -1,12 +1,3 @@
-// .MenuBox {
-//     width: 100vw;
-//     height: 100vh;
-//     background-color: #161616BD;
-//     position: fixed;
-//     z-index: 10;
-//     transition: opacity .2s linear;
-// }
-
 .MenuBox {
     width: 100vw;
     height: fit-content;
@@ -25,25 +16,6 @@
 .MenuBoxHide {
     opacity: 0;
 }
-
-// .MenuContainer {
-//     width: calc(20vw - 40px);
-//     min-width: 200px;
-//     height: calc(100svh - 52px);
-//     overflow-y: auto;
-//     padding: 26px 20px;
-//     background-color: white;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 1000;
-//     transition: transform .2s linear;
-
-//     &::-webkit-scrollbar {
-//         width: 0;
-//         display: none;
-//     }
-// }
 
 .MenuContainer {
     width: calc(20vw - 40px);

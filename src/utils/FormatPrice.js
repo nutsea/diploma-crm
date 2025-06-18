@@ -1,33 +1,3 @@
-// function roundPrice(price) {
-//     const remainder = price % 50
-
-//     if (remainder < 25) {
-//         return price - remainder
-//     } else {
-//         return price + (50 - remainder)
-//     }
-// }
-
-// function roundPrice(price) {
-//     const remainder = price % 100
-
-//     if (remainder < 50) {
-//         return price - remainder
-//     } else {
-//         return price + (100 - remainder)
-//     }
-// }
-
-// function roundPrice2(price) {
-//     const remainder = price % 25
-
-//     if (remainder < 12.5) {
-//         return price - remainder
-//     } else {
-//         return price + (25 - remainder)
-//     }
-// }
-
 class FormatPrice {
     static roundPrice(price) {
         const remainder = price % 100
